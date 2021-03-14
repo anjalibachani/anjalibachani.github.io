@@ -606,3 +606,12 @@ b, strong {
   background: rgb(71, 74, 82);
   color: white;
 }
+/* Gmail */
+.fa-envelope {
+  background: #55ACEE;
+  color: white;
+}
+
+.circle {
+  border-radius: 50%;
+}
