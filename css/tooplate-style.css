@@ -51,7 +51,7 @@ p {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
-  color: #5b5b5b;
+  color: #0a0a0a;
   margin-bottom: 0;
 }
 
@@ -291,7 +291,7 @@ b, strong {
 }
 
 .dark-mode {
-  background: #0c0c0d;
+  background: #39393e;
 }
 .dark-mode .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.8);
