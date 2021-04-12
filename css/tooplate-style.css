@@ -52,6 +52,7 @@ p {
   font-weight: 300;
   line-height: 1.5;
   color: #5b5b5b;
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -614,4 +615,31 @@ b, strong {
 
 .circle {
   border-radius: 50%;
+}
+
+* {box-sizing:border-box}
+
+
+.skills {
+  text-align: right; /* Right-align text */
+  padding-top: 10px; /* Add top padding */
+  padding-bottom: 10px; /* Add bottom padding */
+  color: white; /* White text color */
+}
+
+.html {width: 90%; background-color: #9BB8ED;} /* Green */
+.css {width: 80%; background-color: #A39FE1;} /* Blue */
+.js {width: 65%; background-color: #DEB3E0;} /* Red */
+.php {width: 60%; background-color: #FEC6DF;} /* Dark Grey */
+.java {width: 90%; background-color: #FFDDE4;}
+.python {width: 86%; background-color: #FEECD6}
+.data {width: 80%; background-color: #C1E3FE;} /* Green */
+.algo {width: 75%; background-color: #CFB6E5;} /* Blue */
+.wd {width: 86%; background-color: #FFD9E0;} /* Red */
+.cc {width: 90%; background-color: #F1EECD;} /* Dark Grey */
+.ds {width: 70%; background-color: #C9DECE;}
+.ml {width: 89%; background-color: #C3BCCF}
+
+.container {
+  padding-left: 0px;
 }
