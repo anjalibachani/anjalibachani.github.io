@@ -643,3 +643,24 @@ b, strong {
 .container {
   padding-left: 0px;
 }
+
+.copyright {
+      font-size: 0.9em;
+      list-style: none;
+      margin: 2em 0 0 0;
+      padding: 0;
+    }
+
+      #footer .copyright li {
+        border-left: solid 1px;
+        display: inline-block;
+        line-height: 1em;
+        margin-left: 1em;
+        padding: 0 0 0 1em;
+      }
+
+        #footer .copyright li:first-child {
+          border-left: 0;
+          margin-left: 0;
+          padding: 0;
+        }
