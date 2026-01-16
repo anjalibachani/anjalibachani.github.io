@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anjali Bachani | Software Engineer at AWS</title>
+  <meta name="description" content="Case study driven portfolio of Anjali Bachani, Software Engineer at Amazon Web Services." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-dark: #0b1320;
+      --bg-light: #ffffff;
+      --panel: #f8fafc;
+      --text-dark: #0f172a;
+      --text-light: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #2563eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(11,19,32,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-light);
+    }
+
+    .nav-inner h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      opacity: 0.85;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+
+    /* HERO */
+    header {
+      background: linear-gradient(to right, rgba(11,19,32,0.95), rgba(11,19,32,0.75)), url('images/hero-bg.png');
+      background-size: cover;
+      padding: 160px 28px 120px;
+      color: var(--text-light);
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 520px;
+      opacity: 0.9;
+    }
+
+    .hero .cta {
+      margin-top: 32px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 12px;
+      justify-self: end;
+    }
+
+    /* SECTION */
+    section {
+      padding: 120px 28px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      margin-bottom: 12px;
+    }
+
+    h3.section-title {
+      font-size: 2.3rem;
+      margin-bottom: 40px;
+    }
+
+    /* CASE STUDIES */
+    .cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .case-card {
+      background: var(--panel);
+      padding: 36px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .case-card h4 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .case-card p {
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    .case-card strong { color: var(--text-dark); }
+
+    /* EXPERIENCE */
+    .timeline {
+      max-width: 800px;
+    }
+
+    .role {
+      margin-bottom: 36px;
+    }
+
+    .role h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .role span {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 60px 28px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .socials a { margin-left: 16px; }
+
+    @media(max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .cases { grid-template-columns: 1fr; }
+      header { padding-top: 140px; }
+      .hero img { justify-self: start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <h1>Anjali Bachani</h1>
+    <div class="nav-links">
+      <a href="#cases">Case Studies</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-outline" href="Anjali_Bachani.pdf">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <div>
+      <h2>Anjali Bachani</h2>
+      <p>Software Engineer at Amazon Web Services. I build scalable, compliant cloud-native systems and lead complex infrastructure initiatives from design to production.</p>
+      <div class="cta"><a class="btn-primary" href="#cases">View My Work</a></div>
+    </div>
+    <img src="images/profile.png" alt="Anjali Bachani">
+  </div>
+</header>
+
+<section id="cases">
+  <div class="section-inner">
+    <div class="eyebrow">Impactful Work</div>
+    <h3 class="section-title">Driving Innovation at Scale</h3>
+
+    <div class="cases">
+      <div class="case-card">
+        <h4>Optimizing AWS Health AI Metering Systems</h4>
+        <p><strong>Overview:</strong> Led the design and ownership of a billing-critical metering service supporting AWS Health Imaging.</p>
+        <p><strong>Approach:</strong> Architected a highly available cloud-native system, streamlined aggregation pipelines, and led IPv6 & FIPS compliance.</p>
+        <p><strong>Impact:</strong> Improved billing accuracy, eliminated revenue leakage, and reduced report generation time by <strong>40%</strong>.</p>
+      </div>
+
+      <div class="case-card">
+        <h4>Scaling Aurora MySQL Testing Infrastructure</h4>
+        <p><strong>Overview:</strong> Built a scalable testing platform supporting thousands of concurrent Aurora MySQL tests.</p>
+        <p><strong>Approach:</strong> Automated test failure triage, introduced resource pooling, and optimized CI pipelines.</p>
+        <p><strong>Impact:</strong> Increased testing efficiency by <strong>30%</strong> and reduced pipeline turnaround by <strong>40%</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <div class="eyebrow">Experience</div>
+    <h3 class="section-title">Professional Journey</h3>
+
+    <div class="timeline">
+      <div class="role">
+        <h4>Software Development Engineer – Health AI</h4>
+        <span>Amazon Web Services · Current</span>
+      </div>
+      <div class="role">
+        <h4>Software Development Engineer – Aurora MySQL</h4>
+        <span>Amazon Web Services · 2023</span>
+      </div>
+      <div class="role">
+        <h4>Software Developer Intern</h4>
+        <span>Axis India Machine Learning · 2019</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div>© Anjali Bachani</div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/anjalibachani/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/anjalibachani"><i class="fab fa-github"></i></a>
+      <a href="mailto:abachani@buffalo.edu"><i class="fa fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
