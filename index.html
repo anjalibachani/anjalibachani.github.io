@@ -86,7 +86,7 @@
     header {
       background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.18), transparent 35%), radial-gradient(circle at 80% 0%, rgba(168,85,247,0.15), transparent 30%), linear-gradient(to right, rgba(11,19,32,0.97), rgba(11,19,32,0.9)), url('images/hero-bg.png');
       background-size: cover;
-      padding: 150px 28px 110px;
+      padding: 140px 28px 90px;
       color: var(--text-light);
     }
 
@@ -161,7 +161,15 @@
 
     /* SECTION */
     section {
-      padding: 110px 28px;
+      padding: 80px 28px;
+    }
+    
+    section:first-of-type {
+      padding-top: 100px;
+    }
+    
+    section:last-of-type {
+      padding-bottom: 100px;
     }
 
     .section-inner {
@@ -185,7 +193,7 @@
     .section-lead {
       max-width: 760px;
       color: #475569;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       font-size: 1.05rem;
     }
 
@@ -365,7 +373,7 @@
     footer {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 70px 28px;
+      padding: 60px 28px;
     }
 
     .footer-inner {
@@ -381,16 +389,22 @@
 
     @media(max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      header { padding-top: 130px; }
+      header { padding: 130px 28px 80px; }
       .hero img { justify-self: start; max-width: 260px; }
       .nav-inner { padding: 14px 18px; }
       .nav-links a { margin-left: 12px; }
+      section { padding: 70px 28px; }
+      section:first-of-type { padding-top: 80px; }
+      section:last-of-type { padding-bottom: 80px; }
     }
 
     @media(max-width: 640px) {
       .nav-links { display: none; }
-      section { padding: 90px 20px; }
-      header { padding: 120px 20px 90px; }
+      section { padding: 60px 20px; }
+      section:first-of-type { padding-top: 70px; }
+      section:last-of-type { padding-bottom: 70px; }
+      header { padding: 120px 20px 70px; }
+      footer { padding: 50px 20px; }
       .panel, .case-card { padding: 24px; }
     }
   </style>
