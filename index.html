@@ -399,9 +399,16 @@
     .owl-carousel .owl-item img {
       display: block;
       width: 100%;
+      max-width: 900px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin: 0 auto;
+    }
+    
+    .owl-carousel .owl-stage {
+      display: flex;
+      align-items: center;
     }
 
     .owl-carousel .owl-nav {
@@ -711,10 +718,10 @@
           items: 1
         },
         600: {
-          items: 2
+          items: 1
         },
         1000: {
-          items: 3
+          items: 1
         }
       }
     });
