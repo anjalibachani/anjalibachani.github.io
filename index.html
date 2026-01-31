@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anjali Bachani | Software Engineer at AWS</title>
-  <meta name="description" content="Case study driven portfolio of Anjali Bachani, Software Engineer at Amazon Web Services." />
+  <meta name="description" content="Portfolio of Anjali Bachani, Software Engineer at Amazon Web Services. Specializing in scalable cloud infrastructure, distributed systems, and building reliable, compliant systems at scale." />
+  <meta name="keywords" content="Software Engineer, AWS, Cloud Infrastructure, Distributed Systems, Anjali Bachani" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +34,10 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -142,6 +147,12 @@
       font-weight: 600;
       display: inline-block;
       box-shadow: 0 15px 30px rgba(37,99,235,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(37,99,235,0.45);
     }
 
     .btn-ghost {
@@ -153,6 +164,12 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
     }
 
     .hero img {
@@ -214,6 +231,12 @@
       border-radius: 16px;
       box-shadow: 0 18px 38px rgba(0,0,0,0.08);
       border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.12);
     }
 
     .case-meta {
@@ -296,6 +319,12 @@
       border: 1px solid #e2e8f0;
       background: #fff;
       box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .role:hover {
+      transform: translateX(4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
 
     .role h4 {
@@ -389,7 +418,47 @@
       font-size: 0.9rem;
     }
 
-    .socials a { margin-left: 16px; }
+    .socials a {
+      margin-left: 16px;
+      font-size: 1.2rem;
+      opacity: 0.8;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .socials a:hover {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .scroll-top.visible {
+      display: flex;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(37,99,235,0.4);
+    }
 
     /* MASTERS PROJECTS CAROUSEL */
     .projects-carousel {
@@ -486,6 +555,13 @@
       header { padding: 120px 20px 70px; }
       footer { padding: 50px 20px; }
       .panel, .case-card { padding: 24px; }
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -679,7 +755,7 @@
     <div class="eyebrow">Let's Talk</div>
     <h3 class="section-title">Let's Connect</h3>
     <div class="panel cta-block">
-      <p class="section-lead">Interested in discussing infrastructure, reliability engineering, or technical challenges at scale. Open to collaboration opportunities, architecture reviews, and technical discussions.</p>
+      <p class="section-lead">Interested in discussing infrastructure, reliability engineering, or technical challenges at scale. Open to collaboration opportunities, architecture reviews, and technical discussions. Let's build something impactful together.</p>
       <div class="cta-actions">
         <a class="btn-primary" href="mailto:abachani@buffalo.edu">Email Anjali</a>
         <a class="btn-ghost" href="https://www.linkedin.com/in/anjalibachani/"><i class="fab fa-linkedin"></i>Connect on LinkedIn</a>
@@ -688,7 +764,7 @@
   </div>
 </section>
 
-<footer id="contact">
+<footer>
   <div class="footer-inner">
     <div>© Anjali Bachani</div>
     <div class="socials">
@@ -699,12 +775,17 @@
   </div>
 </footer>
 
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
 <!-- jQuery -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <!-- Owl Carousel -->
 <script src="js/owl.carousel.min.js"></script>
 <script>
   $(document).ready(function(){
+    // Initialize carousel
     $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 30,
@@ -724,6 +805,42 @@
           items: 1
         }
       }
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href !== '') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
     });
   });
 </script>
